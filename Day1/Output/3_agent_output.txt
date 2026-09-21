@@ -1,0 +1,34 @@
+=== AI AGENT DEMO (LLM + Tools + Loop) ===
+
+User request: Compare my Food spending in July vs August, tell me if it went up, and let me know if August Food spending is above 1500.
+
+[Step 1] Agent reasons: "I need the raw expense data first."
+          -> calling tool: read_expenses()
+          -> observed result: 22 rows loaded
+
+[Step 2] Agent reasons: "I need July Food total."
+          -> calling tool: totals_by_category(month_prefix='2026-07')
+          -> observed result: Food = 1720.0
+
+[Step 3] Agent reasons: "Now I need August Food total."
+          -> calling tool: totals_by_category(month_prefix='2026-08')
+          -> observed result: Food = 2650.0
+
+[Step 4] Agent reasons: "I should compare the two months."
+          -> calling tool: compare(value_a=1720.0, value_b=2650.0)
+          -> observed result: {'difference': 930.0, 'direction': 'increased'}
+
+[Step 5] Agent reasons: "I also need to check the 1500 threshold the user mentioned." (no tool needed, simple check)
+          -> August Food (2650.0) > 1500 ? True
+
+[Step 6] Agent has enough information. Produces final answer:
+
+Your Food spending in July was 1720 and in August it was 2650. That's a increased of 930. Yes, August Food spending (2650) is above your 1500 threshold.
+
+--- WHAT MADE THIS DIFFERENT ---
+Nobody hardcoded 'read file, then compare July to August, then
+check 1500'. The agent worked that sequence out itself from a
+plain-English request, called tools one at a time, looked at each
+result before deciding the next step, and stopped once the task
+was actually done -- something neither the chatbot (no tools) nor
+the workflow (fixed steps only) could do.

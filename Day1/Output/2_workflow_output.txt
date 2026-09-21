@@ -1,0 +1,24 @@
+=== RULE-BASED WORKFLOW DEMO ===
+
+Step 1: Loaded 22 rows from data/expenses.csv
+Step 2: Filtering rows for hardcoded target month 2026-08
+Step 3: Comparing totals against data/budget.json
+
+Category       Spent     Budget    Status
+--------------------------------------------------
+Food           2650      1500      OVER BUDGET
+Transport      330       400       OK
+Entertainment  650       700       OK
+Bills          1500      1600      OK
+Shopping       700       800       OK
+
+Step 4: Fixed conditional rule for 'Food' category
+-> RULE TRIGGERED: Food spending (2650) exceeds budget (1500). Printing fixed warning message.
+
+--- LIMITATION ---
+This workflow can ONLY ever check the hardcoded month (2026-08)
+against the hardcoded budget file. If the user asks a different
+question -- e.g. 'compare this month to last month' or 'which
+single day did I spend the most on food' -- there is no code path
+for it. Someone would have to open this script and add a brand
+new function for every new type of question.

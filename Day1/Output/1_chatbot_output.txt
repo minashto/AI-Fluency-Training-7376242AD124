@@ -1,0 +1,25 @@
+=== PLAIN CHATBOT DEMO ===
+
+User pastes their data directly into the chat:
+
+
+date,category,amount
+2026-08-02,Food,500
+2026-08-07,Food,600
+2026-08-12,Food,280
+2026-08-20,Food,550
+2026-08-23,Food,300
+2026-08-29,Food,420
+
+User question: How much did I spend on food in August, and am I overspending?
+
+Chatbot response:
+
+Based on the numbers you pasted, your food expenses in August were roughly: 500 + 600 + 280 + 550 + 300 + 420 = 2650.
+I can't say for certain whether that counts as 'overspending' because I don't know your budget, and I have no way to check your actual expense records myself -- I only know what you typed into this message. If you pasted an incomplete list, or there are more August food expenses in your records that you didn't include, my answer will be wrong and I have no way of knowing that.
+
+--- LIMITATION ---
+This chatbot never touched data/expenses.csv. It has no tools and
+no memory of past months beyond what was pasted. It cannot verify
+anything, cannot fetch the July data to compare, and cannot take
+any follow-up action (e.g. flag the overspend, send an alert).
