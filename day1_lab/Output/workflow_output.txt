@@ -1,0 +1,15 @@
+
+=== SYSTEM 2: RULE-BASED WORKFLOW (no LLM) ===
+
+Q: What is the fee for AI202?
+A: Fee for AI202: Rs. 18,000
+----------------------------------------------------------------------
+Q: What is the total fee for CS101 and AI202 after a 10% scholarship?
+A: Total fee: Rs. 27,000
+----------------------------------------------------------------------
+Q: Is DS303 more expensive than CS101, and by how much?
+A: Sorry, I do not have a rule for this type of question.
+----------------------------------------------------------------------
+Q: Write a two-line welcome message for new AI students.
+A: Sorry, I can only answer questions about course fees.
+----------------------------------------------------------------------
